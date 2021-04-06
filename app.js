@@ -43,3 +43,21 @@ function removeCursorClass(element) {
     element.classList.remove('left');
     element.classList.remove('right');
 }
+var locations = ['LONDON', 'PARIS', 'NEW YORK', 'COPENHAGEN', 'MADRID'];
+image.style.backgroundImage = "url(./images/1.jpg)";
+counter.querySelector('p').innerText = '1/5';
+title.querySelector('p').innerText = locations[0];
+previous.addEventListener('click', function () {
+    var num = +image.style.backgroundImage.split('/')[2][0];
+    num == 1 ? num = 5 : num--;
+    image.style.backgroundImage = "url(./images/" + num + ".jpg)";
+    counter.querySelector('p').innerText = num + "/5";
+    title.querySelector('p').innerText = "" + locations[num - 1]; // images starts at 1 and array indexes at 0
+});
+next.addEventListener('click', function () {
+    var num = +image.style.backgroundImage.split('/')[2][0];
+    num == 5 ? num = 1 : num++;
+    image.style.backgroundImage = "url(./images/" + num + ".jpg)";
+    counter.querySelector('p').innerText = num + "/5";
+    title.querySelector('p').innerText = "" + locations[num - 1]; // images starts at 1 and array indexes at 0
+});
