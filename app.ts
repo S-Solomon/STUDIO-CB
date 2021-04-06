@@ -77,7 +77,7 @@ next.addEventListener('click', () => {
 
 function loadPage() {
     let html: string = '';
-    let splashTitle: HTMLElement = document.querySelector('.splash-title');
+    let splashTitle: any = document.querySelector('.splash-title');
     let splashTitleArray: string[] = splashTitle.innerText.split('');
     splashTitleArray.forEach((letter: string) => {
         html += `<span>${letter}</span>`
@@ -98,8 +98,8 @@ function loadPage() {
             main.style.opacity =  '1';
             splash.style.display = 'none';
             image.style.transform = `scale(1)`;
-        }, 50)
-
+        }, 500)
+        
     }, 2000)
 }
 

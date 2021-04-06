@@ -87,7 +87,7 @@ function loadPage() {
             main.style.opacity = '1';
             splash.style.display = 'none';
             image.style.transform = "scale(1)";
-        }, 50);
+        }, 500);
     }, 2000);
 }
 loadPage();
