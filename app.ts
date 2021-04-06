@@ -6,6 +6,7 @@ let title: HTMLElement = document.querySelector('.title');
 let mode: HTMLElement = document.querySelector('.mode');
 let counter: HTMLElement = document.querySelector('.counter');
 let cursor: HTMLElement = document.querySelector('.cursor');
+let splash: HTMLElement = document.querySelector('.splash');
 
 let darkMode: boolean = false;
 
@@ -73,3 +74,33 @@ next.addEventListener('click', () => {
     counter.querySelector('p').innerText = `${num}/5`;
     title.querySelector('p').innerText = `${locations[num - 1]}` // images starts at 1 and array indexes at 0
 })
+
+function loadPage() {
+    let html: string = '';
+    let splashTitle: HTMLElement = document.querySelector('.splash-title');
+    let splashTitleArray: string[] = splashTitle.innerText.split('');
+    splashTitleArray.forEach((letter: string) => {
+        html += `<span>${letter}</span>`
+    })
+    splashTitle.innerHTML = html;
+
+    [...splashTitle.querySelectorAll('span')].forEach((span, index) => {
+        setTimeout(() => {
+            span.style.transform = `translateY(0px)`
+        },(index + 1) * 50)
+    })
+
+    setTimeout(() => {
+        splash.classList.add('active');
+
+        setTimeout(() => {
+            main.style.transform = `translateY(0px)`;
+            main.style.opacity =  '1';
+            splash.style.display = 'none';
+            image.style.transform = `scale(1)`;
+        }, 50)
+
+    }, 2000)
+}
+
+loadPage();

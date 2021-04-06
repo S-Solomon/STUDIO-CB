@@ -1,3 +1,8 @@
+var __spreadArray = (this && this.__spreadArray) || function (to, from) {
+    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
+        to[j] = from[i];
+    return to;
+};
 var main = document.querySelector('main');
 var previous = document.querySelector('.previous');
 var next = document.querySelector('.next');
@@ -6,6 +11,7 @@ var title = document.querySelector('.title');
 var mode = document.querySelector('.mode');
 var counter = document.querySelector('.counter');
 var cursor = document.querySelector('.cursor');
+var splash = document.querySelector('.splash');
 var darkMode = false;
 mode.addEventListener('click', function () {
     darkMode = !darkMode;
@@ -61,3 +67,27 @@ next.addEventListener('click', function () {
     counter.querySelector('p').innerText = num + "/5";
     title.querySelector('p').innerText = "" + locations[num - 1]; // images starts at 1 and array indexes at 0
 });
+function loadPage() {
+    var html = '';
+    var splashTitle = document.querySelector('.splash-title');
+    var splashTitleArray = splashTitle.innerText.split('');
+    splashTitleArray.forEach(function (letter) {
+        html += "<span>" + letter + "</span>";
+    });
+    splashTitle.innerHTML = html;
+    __spreadArray([], splashTitle.querySelectorAll('span')).forEach(function (span, index) {
+        setTimeout(function () {
+            span.style.transform = "translateY(0px)";
+        }, (index + 1) * 50);
+    });
+    setTimeout(function () {
+        splash.classList.add('active');
+        setTimeout(function () {
+            main.style.transform = "translateY(0px)";
+            main.style.opacity = '1';
+            splash.style.display = 'none';
+            image.style.transform = "scale(1)";
+        }, 50);
+    }, 2000);
+}
+loadPage();

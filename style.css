@@ -20,11 +20,14 @@ body, html {
 
 main {
     position: fixed;
+    opacity: 0;
+    transform: translateY(20px);
     top: 16px;
     right: 16px;
     left: 16px;
     bottom: 16px;
     border: 1px solid var(--secondary-color);
+    transition: 1s;
 }
 
 .side-bar {
