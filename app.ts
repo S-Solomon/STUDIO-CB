@@ -1,5 +1,3 @@
-import { string } from "yargs";
-
 let main: HTMLElement = document.querySelector('main');
 let previous: HTMLElement = document.querySelector('.previous');
 let next: HTMLElement = document.querySelector('.next');
@@ -26,3 +24,30 @@ mode.addEventListener('click', () => {
         document.documentElement.style.setProperty('--title-color','#161616' );
     }
 })
+
+window.addEventListener('mousemove', (e) => {
+    cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`
+})
+
+next.addEventListener('mouseenter', () => {
+    cursor.classList.remove('left');
+    cursor.classList.add('right');
+})
+
+next.addEventListener('mouseleave' , () => {
+    removeCursorClass(cursor);
+})
+
+previous.addEventListener('mouseenter', () => {
+    cursor.classList.remove('right');
+    cursor.classList.add('left');
+})
+
+previous.addEventListener('mouseleave', () => {
+    removeCursorClass(cursor);
+})
+
+function removeCursorClass(element: any) {
+    element.classList.remove('left');
+    element.classList.remove('right');
+}

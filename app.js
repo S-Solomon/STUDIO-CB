@@ -1,5 +1,3 @@
-"use strict";
-// exports.__esModule = true;
 var main = document.querySelector('main');
 var previous = document.querySelector('.previous');
 var next = document.querySelector('.next');
@@ -24,3 +22,24 @@ mode.addEventListener('click', function () {
         document.documentElement.style.setProperty('--title-color', '#161616');
     }
 });
+window.addEventListener('mousemove', function (e) {
+    cursor.style.transform = "translate3d(" + e.clientX + "px, " + e.clientY + "px, 0)";
+});
+next.addEventListener('mouseenter', function () {
+    cursor.classList.remove('left');
+    cursor.classList.add('right');
+});
+next.addEventListener('mouseleave', function () {
+    removeCursorClass(cursor);
+});
+previous.addEventListener('mouseenter', function () {
+    cursor.classList.remove('right');
+    cursor.classList.add('left');
+});
+previous.addEventListener('mouseleave', function () {
+    removeCursorClass(cursor);
+});
+function removeCursorClass(element) {
+    element.classList.remove('left');
+    element.classList.remove('right');
+}
