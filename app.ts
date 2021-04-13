@@ -4,9 +4,9 @@ let next = document.querySelector('.next') as HTMLDivElement;
 let image = document.querySelector('.image') as HTMLDivElement;
 let title = document.querySelector('.title') as HTMLDivElement;
 let mode = document.querySelector('.mode') as HTMLUListElement;
-let counter: HTMLElement = document.querySelector('.counter') as HTMLDivElement;
-let cursor: HTMLElement = document.querySelector('.cursor') as HTMLDivElement;
-let splash: HTMLElement = document.querySelector('.splash') as HTMLDivElement;
+let counter = document.querySelector('.counter') as HTMLDivElement;
+let cursor = document.querySelector('.cursor') as HTMLDivElement;
+let splash = document.querySelector('.splash') as HTMLDivElement;
 
 let darkMode: boolean = false;
 
