@@ -1,12 +1,12 @@
-let main: HTMLElement = document.querySelector('main');
-let previous: HTMLElement = document.querySelector('.previous');
-let next: HTMLElement = document.querySelector('.next');
-let image: HTMLElement = document.querySelector('.image');
-let title: HTMLElement = document.querySelector('.title');
-let mode: HTMLElement = document.querySelector('.mode');
-let counter: HTMLElement = document.querySelector('.counter');
-let cursor: HTMLElement = document.querySelector('.cursor');
-let splash: HTMLElement = document.querySelector('.splash');
+let main = document.querySelector('main') as HTMLElement;
+let previous = document.querySelector('.previous') as HTMLDivElement;
+let next = document.querySelector('.next') as HTMLDivElement;
+let image = document.querySelector('.image') as HTMLDivElement;
+let title = document.querySelector('.title') as HTMLDivElement;
+let mode = document.querySelector('.mode') as HTMLUListElement;
+let counter: HTMLElement = document.querySelector('.counter') as HTMLDivElement;
+let cursor: HTMLElement = document.querySelector('.cursor') as HTMLDivElement;
+let splash: HTMLElement = document.querySelector('.splash') as HTMLDivElement;
 
 let darkMode: boolean = false;
 
